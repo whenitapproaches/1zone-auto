@@ -4,7 +4,7 @@ const { init } = require("./init")
 
 function getAdbDevices() {
   return new Promise((resolve, reject) => {
-    const adbPath = path.resolve(__dirname, "adb")
+    const adbPath = path.resolve(__dirname, "adb", "adb.exe")
     exec(`${adbPath} devices -l`, (error, stdout, stderr) => {
       if (error) return reject(error)
       if (stderr) return reject(new Error(stderr))
